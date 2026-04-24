@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 
-    public static Connection obtenerConexion() throws SQLException {
+    public static Connection getConexion() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -24,7 +24,8 @@ public class ConexionBD {
         String user = System.getenv("MYSQLUSER") != null ? System.getenv("MYSQLUSER") : "root";
         String pass = System.getenv("MYSQLPASSWORD") != null ? System.getenv("MYSQLPASSWORD") : "";
 
-        String url = "jdbc:mysql://" + host + ":" + port + "/" + db + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
+        String url = "jdbc:mysql://" + host + ":" + port + "/" + db
+                   + "?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
         return DriverManager.getConnection(url, user, pass);
     }
 }
