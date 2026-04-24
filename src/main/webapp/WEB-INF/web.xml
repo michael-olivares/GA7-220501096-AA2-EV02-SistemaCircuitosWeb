@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    web.xml — Descriptor de despliegue de la aplicación web
+    Sistema de Diseño Integrado de Circuitos
+    GA7-220501096-AA3-EV02 — Michael Olivares — SENA Ficha 3118306
+-->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>SistemaCircuitosWeb</display-name>
+    <description>
+        Sistema de Diseño Integrado de Circuitos — Aplicación Web con Servlets y JSP.
+        GA7-220501096-AA3-EV02 — Módulos de Software Codificados y Probados.
+        Autor: Michael Ronald Olivares Giraldo — SENA Ficha 3118306 — Abril 2026.
+    </description>
+
+    <!-- ── Página de bienvenida ────────────────────────────────── -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- ── Páginas de error ────────────────────────────────────── -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/vistas/error404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/vistas/error500.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/vistas/error500.jsp</location>
+    </error-page>
+
+    <!-- ── Codificación de sesión ──────────────────────────────── -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <!--
+        NOTA: Los servlets se registran con anotaciones @WebServlet en el código Java.
+        No se requiere mapeo manual en este archivo cuando se usan anotaciones Jakarta EE.
+
+        Servlets registrados:
+          - LoginServlet    → /LoginServlet
+          - ProyectoServlet → /ProyectoServlet
+          - DisenoServlet   → /DisenoServlet
+          - UsuarioServlet  → /UsuarioServlet
+    -->
+
+</web-app>
