@@ -1,0 +1,57 @@
+ENLACE AL REPOSITORIO GIT — GA7-220501096-AA3-EV02
+=========================================================
+
+Proyecto: Sistema de Diseño Integrado de Circuitos — Web (Servlets + JSP)
+Evidencia: GA7-220501096-AA3-EV02 — Módulos de Software Codificados y Probados
+Autor: Michael Ronald Olivares Giraldo
+SENA — Regional Distrito Capital — Centro Metalmecánico
+Ficha: 3118306 — Tecnología en Análisis y Desarrollo de Software — Abril 2026
+
+=========================================================
+REPOSITORIO GITHUB:
+https://github.com/michael-olivares/GA7-220501096-AA2-EV02-SistemaCircuitosWeb
+
+RAMA PRINCIPAL: main
+
+=========================================================
+APLICACIÓN DESPLEGADA (URL PÚBLICA):
+https://web-production-62fd0.up.railway.app/SistemaCircuitosWeb
+
+Credenciales de prueba:
+  Email:      admin@sena.edu.co
+  Contraseña: admin123
+
+=========================================================
+TECNOLOGÍAS UTILIZADAS:
+  - Lenguaje:    Java EE (Servlets + JSP)
+  - Servidor:    Apache Tomcat 10.x
+  - Base datos:  MySQL 8.x (conexión JDBC)
+  - Patrón:      MVC — Modelo (DAO) · Vista (JSP) · Controlador (Servlet)
+  - Métodos HTTP: GET (consultar/eliminar) · POST (crear/actualizar)
+  - Sesión:      HttpSession con control de autenticación
+  - Despliegue:  Railway (MySQL + Web, ambos Online)
+
+=========================================================
+MÓDULOS IMPLEMENTADOS Y PROBADOS:
+  1. Módulo Proyectos  — CRUD completo con formularios HTML + Servlet + JSP
+  2. Módulo Diseños    — CRUD completo con actualización de estado
+  3. Módulo Usuarios   — CRUD completo con control de roles y accesos
+  4. Autenticación     — Login/Logout con HttpSession
+
+=========================================================
+ESTRUCTURA DEL REPOSITORIO:
+  src/main/
+  ├── java/co/sena/adso/circuitos/
+  │   ├── conexion/   (ConexionBD.java — Singleton JDBC)
+  │   ├── modelo/     (Proyecto.java, Diseno.java, Usuario.java)
+  │   ├── dao/        (ProyectoDAO.java, DisenoDAO.java, UsuarioDAO.java)
+  │   └── servlet/    (Controladores HTTP — GET y POST)
+  └── webapp/
+      ├── WEB-INF/
+      ├── *.jsp       (Vistas JSP)
+      └── index.jsp   (Dashboard principal)
+
+  SISTEMA_DISENO_CIRCUITOS_BD.sql  — Script de base de datos
+  pom.xml                          — Configuración Maven
+  Procfile                         — Configuración Railway
+  railway.json                     — Variables de entorno Railway
